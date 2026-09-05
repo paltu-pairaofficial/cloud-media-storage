@@ -1,0 +1,6 @@
+{
+  "name": "Cloud Media Files Storage Service",
+  "description": "Google Drive-style cloud file storage and sharing web application with folder management, file uploads, permissions, search, trash, and previews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
