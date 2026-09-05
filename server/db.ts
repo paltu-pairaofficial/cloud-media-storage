@@ -290,9 +290,11 @@ const DB_FILE = path.join(process.cwd(), 'data', 'storage_db.json');
 class DatabaseManager {
   private data: DatabaseSchema;
 
-  constructor() {
-    this.data = this.loadLocal();
-  }
+ constructor() {
+  this.data = supabase
+    ? getInitialLocalData()
+    : this.loadLocal();
+}
 
   get users() { return this.data.users; }
   get folders() { return this.data.folders; }
