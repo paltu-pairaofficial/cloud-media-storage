@@ -70,12 +70,14 @@ export const Header: React.FC = () => {
         <div className="w-8 h-8 rounded-lg bg-[#5A5A40] flex items-center justify-center text-white shadow-sm shadow-[#5A5A40]/20">
           <HardDrive className="w-4 h-4" />
         </div>
-        <div className="flex items-baseline gap-1.5">
-          <span className="text-xl font-semibold tracking-tight text-[#1A1A17]" style={{ fontFamily: 'Georgia, serif' }}>
-            Caelum <span className="italic font-normal opacity-70">Drive</span>
-          </span>
-        </div>
-      </div>
+       <div className="flex items-baseline gap-1.5">
+  <span
+    className="text-xl font-semibold tracking-tight text-[#1A1A17]"
+    style={{ fontFamily: 'Georgia, serif' }}
+  >
+    Cloud Media <span className="italic font-normal opacity-70">Storage</span>
+  </span>
+</div>
 
       {/* Center: Search & Filter bar */}
       <div className="flex-1 max-w-xl relative px-2 sm:px-6" ref={filterRef}>
