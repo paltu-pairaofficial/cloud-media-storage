@@ -66,18 +66,23 @@ export const Header: React.FC = () => {
   return (
     <header className="h-16 bg-white border-b border-[#E5E5DF] px-6 sm:px-8 flex items-center justify-between gap-4 sticky top-0 z-30 select-none">
       {/* Brand Logo & Name */}
+      {/* Brand Logo & Name */}
       <div className="flex items-center gap-3.5 min-w-[200px]">
         <div className="w-8 h-8 rounded-lg bg-[#5A5A40] flex items-center justify-center text-white shadow-sm shadow-[#5A5A40]/20">
           <HardDrive className="w-4 h-4" />
         </div>
-       <div className="flex items-baseline gap-1.5">
-  <span
-    className="text-xl font-semibold tracking-tight text-[#1A1A17]"
-    style={{ fontFamily: 'Georgia, serif' }}
-  >
-    Cloud Media <span className="italic font-normal opacity-70">Storage</span>
-  </span>
-</div>
+
+        <div className="flex items-baseline gap-1.5">
+          <span
+            className="text-xl font-semibold tracking-tight text-[#1A1A17]"
+            style={{ fontFamily: 'Georgia, serif' }}
+          >
+            Cloud Media <span className="italic font-normal opacity-70">Storage</span>
+          </span>
+        </div>
+      </div>
+
+      {/* Center: Search & Filter bar */}
 
       {/* Center: Search & Filter bar */}
       <div className="flex-1 max-w-xl relative px-2 sm:px-6" ref={filterRef}>
@@ -107,11 +112,10 @@ export const Header: React.FC = () => {
 
             <button
               onClick={() => setIsFilterOpen(!isFilterOpen)}
-              className={`p-1.5 rounded-full transition-colors flex items-center gap-1 text-xs font-medium ${
-                mediaTypeFilter !== 'all'
-                  ? 'bg-[#5A5A40]/15 text-[#5A5A40] font-semibold px-2.5'
-                  : 'text-[#8E8E8A] hover:text-[#2D2D2A] hover:bg-[#E5E5DF]/70'
-              }`}
+              className={`p-1.5 rounded-full transition-colors flex items-center gap-1 text-xs font-medium ${mediaTypeFilter !== 'all'
+                ? 'bg-[#5A5A40]/15 text-[#5A5A40] font-semibold px-2.5'
+                : 'text-[#8E8E8A] hover:text-[#2D2D2A] hover:bg-[#E5E5DF]/70'
+                }`}
               title="Filter by file type"
             >
               <SlidersHorizontal className="w-3.5 h-3.5" />
@@ -139,11 +143,10 @@ export const Header: React.FC = () => {
                       setMediaTypeFilter(opt.type);
                       setIsFilterOpen(false);
                     }}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-left transition-all ${
-                      isSelected
-                        ? 'bg-[#5A5A40]/10 text-[#5A5A40] border border-[#5A5A40]/30 font-semibold'
-                        : 'text-[#71716A] hover:bg-[#F5F5F0] border border-transparent'
-                    }`}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-left transition-all ${isSelected
+                      ? 'bg-[#5A5A40]/10 text-[#5A5A40] border border-[#5A5A40]/30 font-semibold'
+                      : 'text-[#71716A] hover:bg-[#F5F5F0] border border-transparent'
+                      }`}
                   >
                     <Icon className="w-4 h-4 text-[#5A5A40]" />
                     <span className="flex-1 truncate">{opt.label}</span>
