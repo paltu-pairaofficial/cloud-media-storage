@@ -88,9 +88,6 @@ export interface DatabaseSchema {
 }
 
 export const UPLOADS_DIR = path.join(process.cwd(), 'data', 'uploads');
-if (!fs.existsSync(UPLOADS_DIR)) {
-  fs.mkdirSync(UPLOADS_DIR, { recursive: true });
-}
 
 // Supabase client instance (initialized if credentials provided)
 const supabaseUrl = process.env.SUPABASE_URL;
