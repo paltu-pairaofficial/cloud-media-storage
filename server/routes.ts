@@ -183,7 +183,7 @@ apiRouter.delete(
   fileController.deleteFile
 );
 
-// ==================== TRASH ROUTES ====================
+//  TRASH ROUTES
 
 apiRouter.get(
   '/trash',
@@ -247,7 +247,7 @@ apiRouter.delete(
   shareController.removeShare
 );
 
-// ==================== LINK SHARES ====================
+// LINK SHARES
 
 apiRouter.post(
   '/link-shares',
@@ -267,7 +267,7 @@ apiRouter.delete(
   linkShareController.removeLinkShare
 );
 
-// ==================== PUBLIC LINK ROUTES ====================
+//  PUBLIC LINK ROUTES
 // These endpoints intentionally do not require authentication.
 
 apiRouter.get(
@@ -280,7 +280,7 @@ apiRouter.get(
   linkShareController.downloadPublicFile
 );
 
-// ==================== SEARCH / RECENT / STARRED / STATS ====================
+//  SEARCH / RECENT / STARRED / STATS 
 
 apiRouter.get(
   '/search',

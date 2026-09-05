@@ -104,40 +104,7 @@ export async function login(req: Request, res: Response): Promise<void> {
   }
 }
 
-export async function demoLogin(req: Request, res: Response): Promise<void> {
-  try {
-    const { email } = req.body;
-    const targetEmail = (email || 'alice@example.com').toLowerCase();
-    let user = await db.getUserByEmail(targetEmail);
 
-    if (!user) {
-      user = await db.getFirstUser();
-    }
-
-    if (!user) {
-      res.status(404).json({ error: 'No demo user available' });
-      return;
-    }
-
-    const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, {
-      expiresIn: '7d',
-    });
-
-    res.json({
-      user: {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        avatarColor: user.avatarColor,
-        createdAt: user.createdAt,
-      },
-      token,
-    });
-  } catch (error) {
-    console.error('Demo login error:', error);
-    res.status(500).json({ error: 'Failed to authenticate demo user' });
-  }
-}
 
 export async function me(req: AuthenticatedRequest, res: Response): Promise<void> {
   if (!req.user) {
